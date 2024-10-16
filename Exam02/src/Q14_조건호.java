@@ -25,7 +25,7 @@ public class Q14_조건호 {
 //            System.out.println("x[" + i +"] : " + x[i]);
 //        }
 
-        reverse(x);
+
 
     }
 
