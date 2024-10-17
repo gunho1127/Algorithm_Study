@@ -1,42 +1,34 @@
 import java.util.Scanner;
 
 public class Q14_조건호 {
-
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
 
-        Scanner stdIn = new Scanner(System.in);
-        int num;
+        System.out.print("요소 수: ");
+        int elementCount = scanner.nextInt();
 
-        do {
-            System.out.print("요솟수: ");
-            num = stdIn.nextInt();
-        } while (num <= 0);
+        int[] x = new int[elementCount];
 
-        // 동적 배열
-        int[] x = new int[num];
-
-        for (int i = 0; i < num; i++) {
-            System.out.print("x[" + i +"] : ");
-            x[i] = stdIn.nextInt();
+        for (int i = 0; i < elementCount; i++) {
+            System.out.print("x[" + i + "] : ");
+            x[i] = scanner.nextInt();
         }
 
-        // 출력을 위한 테스트 구문
-//        for (int i = 0; i < num; i++) {
-//            System.out.println("x[" + i +"] : " + x[i]);
-//        }
+        for (int i = 0; i < elementCount / 2; i++) {
+            int temp = x[i];
+            x[i] = x[elementCount - i - 1];
+            x[elementCount - i - 1] = temp;
+        }
 
+        System.out.print("요소를 역순으로 정렬했습니다.\nx = [");
+        for (int i = 0; i < elementCount; i++) {
+            System.out.print(x[i]);
+            if (i < elementCount - 1) {
+                System.out.print(", ");
+            }
+        }
+        System.out.println("]");
 
-
+        scanner.close();
     }
-
-    // 역순 정렬
-    static void reverse(int x) {
-
-    }
-
-    // 데이터 교환
-    static void swap(int[] x, int idx1, int idx2){
-
-    }
-
 }
